@@ -16,7 +16,7 @@
 
       <li
         class="list-group-item list-group-item-info"
-        v-for="(item,index) in todos"
+        v-for="(item, index) in todos"
         v-bind:key="item.id"
       >
         {{ item.name }}
@@ -24,10 +24,10 @@
       {{
         newTodo
       }}
+      <button @click="deleteTodo(index)" class="btn btn-info mb-3 form-control">
+        Delete
+      </button>
     </ul>
-    <button
-      @click="deleteTodo(index)" class="btn btn-info mb-3 form-control"
-      >Delete</button>
   </div>
 </template>
 
@@ -65,7 +65,7 @@ export default {
   },
   deleteTodo(index) {
     this.todos.splice(index, 1);
-  }
+  },
 };
 </script>
 
